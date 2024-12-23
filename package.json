@@ -1,0 +1,19 @@
+{
+  "name": "designpatternslevel100",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharatta/DesignPatterns.git"
+  },
+  "author": "Bharat Vasoya <vasoyabharat865@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharatta/DesignPatterns/issues"
+  },
+  "homepage": "https://github.com/bharatta/DesignPatterns#readme"
+}
