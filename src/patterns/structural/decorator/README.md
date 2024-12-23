@@ -33,6 +33,7 @@ The implementation includes:
 
 ## Usage Example 
 
+```typescript
 // Create base component
 const component = new ConcreteComponent();
 // Add decorators
@@ -40,6 +41,7 @@ const withLogging = new LoggingDecorator(component);
 const withEncryption = new EncryptionDecorator(withLogging);
 // Use decorated component
 withEncryption.operation();
+```
 
 ## Benefits
 - More flexible than inheritance

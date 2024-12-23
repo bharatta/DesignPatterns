@@ -31,7 +31,7 @@ The implementation includes:
 - Composite class (represents complex objects that contain other objects)
 
 ## Usage Example 
-typescript
+```typescript
 // Create structure
 const tree = new Composite();
 const branch = new Composite();
@@ -43,6 +43,7 @@ branch.add(leaf2);
 tree.add(branch);
 // Use uniformly
 console.log(tree.operation());
+```
 
 ## Benefits
 - Defines class hierarchies of primitive and complex objects

@@ -34,6 +34,7 @@ The implementation includes:
 - Different types of proxies (Virtual, Protection, etc.)
 
 ## Usage Example 
+```typescript
 // Basic Proxy
 const realSubject = new RealSubject();
 const proxy = new Proxy(realSubject);
@@ -44,6 +45,7 @@ virtualProxy.request(); // Creates RealSubject only when needed
 // Protection Proxy
 const protectionProxy = new ProtectionProxy(realSubject, isAdmin);
 protectionProxy.request(); // Checks access rights
+```
 
 ## Benefits
 - Controls access to another object

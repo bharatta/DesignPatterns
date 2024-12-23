@@ -21,9 +21,10 @@ The implementation includes:
 - Public static access method
 
 ## Usage Example 
-typescript
+```typescript
 const instance = Singleton.getInstance();
 instance.someOperation();
+```
 
 ## Benefits
 - Controlled access to sole instance

@@ -33,6 +33,7 @@ The implementation includes:
 - State transitions
 
 ## Usage Example 
+```typescript
 // Create context with initial state
 const context = new Context(new ConcreteStateA());
 // Client works with context
@@ -40,6 +41,7 @@ context.request1();
 // State changes internally
 context.request2();
 // State changes again
+```
 
 ## Benefits
 - Encapsulates state-specific behavior

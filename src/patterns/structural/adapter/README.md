@@ -28,10 +28,11 @@ The implementation includes:
 - Adapter (wrapper that makes Adaptee compatible with Target)
 
 ## Usage Example 
-typescript
+```typescript
 const adaptee = new Adaptee();
 const adapter = new Adapter(adaptee);
 adapter.request(); // Now works with client code
+```
 
 ## Benefits
 - Separates interface conversion from business logic

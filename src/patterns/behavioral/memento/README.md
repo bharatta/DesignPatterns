@@ -29,6 +29,7 @@ The implementation includes:
 - Caretaker (keeps track of multiple mementos)
 
 ## Usage Example 
+```typescript
 // Create originator and caretaker
 const originator = new Originator('Initial State');
 const caretaker = new Caretaker(originator);
@@ -40,6 +41,7 @@ originator.doSomething();
 caretaker.backup();
 // Restore previous state
 caretaker.undo();
+```
 
 ## Benefits
 - Provides a way to save and restore object's state

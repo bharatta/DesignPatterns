@@ -30,7 +30,7 @@ The implementation includes:
 - Handling of circular references
 
 ## Usage Example 
-typescript
+```typescript
 // Create initial prototype
 const prototype = new Prototype();
 prototype.primitive = 245;
@@ -40,6 +40,7 @@ const clone = prototype.clone();
 // Verify the clone
 console.log(prototype.primitive === clone.primitive); // true
 console.log(prototype.component === clone.component); // false (deep copy)
+```
 
 ## Benefits
 - Reduces subclassing

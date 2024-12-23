@@ -30,7 +30,7 @@ The implementation includes:
 - Client code that builds the chain
 
 ## Usage Example
-typescript
+```typescript
 // Create handlers
 const handler1 = new ConcreteHandler1();
 const handler2 = new ConcreteHandler2();
@@ -39,7 +39,8 @@ const handler3 = new ConcreteHandler3();
 handler1.setNext(handler2).setNext(handler3);
 // Send requests
 handler1.handle("Request 1");
-handler1.handle("Request 2"); 
+handler1.handle("Request 2");
+```
 
 ## Benefits
 - Reduces coupling between senders and receivers

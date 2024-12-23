@@ -38,12 +38,14 @@ The implementation includes:
 - Optional interfaces for subsystems
 
 ## Usage Example 
+```typescript
 // Complex subsystem parts
 const subsystem1 = new Subsystem1();
 const subsystem2 = new Subsystem2();
 // Simple facade interface
 const facade = new Facade(subsystem1, subsystem2);
 facade.operation();
+```
 
 ## Benefits
 - Isolates clients from subsystem components

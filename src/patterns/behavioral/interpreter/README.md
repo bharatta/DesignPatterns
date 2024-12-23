@@ -34,7 +34,7 @@ The implementation includes:
 - Client
 
 ## Usage Example 
-typescript
+```typescript
 // Define grammar
 interface Expression {
 interpret(context: string): boolean;
@@ -45,6 +45,7 @@ const expression2 = new TerminalExpression("World");
 const andExp = new AndExpression(expression1, expression2);
 // Interpret
 const result = andExp.interpret("Hello World"); // true
+```
 
 ## Benefits
 - Easy to implement simple grammars

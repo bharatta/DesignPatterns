@@ -30,6 +30,7 @@ The implementation includes:
 - Concrete Components
 
 ## Usage Example 
+```typescript
 // Create components
 const component1 = new Component1();
 const component2 = new Component2();
@@ -38,6 +39,7 @@ const mediator = new ConcreteMediator(component1, component2);
 // Components work through mediator
 component1.doA();
 component2.doD();
+```
 
 ## Benefits
 - Reduces coupling between components

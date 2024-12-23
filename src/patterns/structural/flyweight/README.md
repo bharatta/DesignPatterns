@@ -32,6 +32,7 @@ The implementation includes:
 - Client code managing extrinsic state
 
 ## Usage Example
+```typescript
 // Create factory with initial shared states
 const factory = new FlyweightFactory([
 ['Model1', 'Red'],
@@ -41,6 +42,7 @@ const factory = new FlyweightFactory([
 const flyweight = factory.getFlyweight(['Model1', 'Red']);
 // Use with unique state
 flyweight.operation('UniqueID123');
+```
 
 ## Benefits
 - Reduces memory usage

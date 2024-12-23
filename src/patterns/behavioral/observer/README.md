@@ -32,6 +32,7 @@ The implementation includes:
 - Concrete Observers
 
 ## Usage Example 
+```typescript
 // Create subject and observers
 const subject = new Subject();
 const observer1 = new ConcreteObserver();
@@ -44,6 +45,7 @@ subject.setState(newState);
 // Observers are automatically notified
 // Unsubscribe observer
 subject.detach(observer1);
+```
 
 ## Benefits
 - Open/Closed Principle

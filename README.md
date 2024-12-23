@@ -107,7 +107,7 @@ npm run build
 (Details for Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy)
 
 ## Project Structure
-
+```
 src/
 ├── patterns/
 │ ├── behavioral/
@@ -116,16 +116,18 @@ src/
 │ └── index.ts
 ├── index.ts
 └── README.md
-
+```
 
 Each pattern follows this structure:
 
+```
 pattern-name/
 ├── interfaces.ts # Pattern interfaces
 ├── implementation.ts # Concrete implementations
 ├── example.ts # Usage examples
 ├── README.md # Pattern documentation
 └── tests/ # Pattern tests
+```
 
 
 ## Testing

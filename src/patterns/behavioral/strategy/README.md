@@ -33,6 +33,7 @@ The implementation includes:
 - Client code
 
 ## Usage Example 
+```typescript
 // Create context with initial strategy
 const context = new Context(new ConcreteStrategyA());
 // Use first strategy
@@ -40,6 +41,7 @@ context.doSomeBusinessLogic();
 // Change strategy at runtime
 context.setStrategy(new ConcreteStrategyB());
 context.doSomeBusinessLogic();
+```
 
 ## Benefits
 - Algorithms can be changed at runtime

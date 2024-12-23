@@ -31,7 +31,7 @@ The implementation includes:
 
 ## Usage Example 
 
-typescript
+```typescript
 // Create implementation
 const implementation = new ConcreteImplementationA();
 // Create abstraction with implementation
@@ -41,6 +41,7 @@ console.log(abstraction.operation());
 // Switch implementation at runtime
 const newImplementation = new ConcreteImplementationB();
 abstraction.setImplementation(newImplementation);
+```
 
 ## Benefits
 - Decouples interface from implementation

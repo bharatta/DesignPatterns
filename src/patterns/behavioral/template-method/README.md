@@ -31,6 +31,7 @@ The implementation includes:
 
 ## Usage Example
 
+```typescript
 // Abstract class with template method
 abstract class DataMiner {
 public mine() {
@@ -53,6 +54,7 @@ protected parseData() {
 // PDF-specific parsing
 }
 }
+```
 
 ## Benefits
 - Eliminates code duplication

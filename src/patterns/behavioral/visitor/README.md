@@ -34,7 +34,8 @@ The implementation includes:
 - Object Structure
 
 ## Usage Example 
-/ Define element interface
+```typescript
+// Define element interface
 interface Element {
 accept(visitor: Visitor): void;
 }
@@ -53,7 +54,8 @@ visitElementA(element: ConcreteElementA) {
 // Use visitor
 const element = new ConcreteElementA();
 const visitor = new ConcreteVisitor();
-element.accept(visitor);/
+element.accept(visitor);
+```
 
 ## Benefits
 - Open/Closed Principle

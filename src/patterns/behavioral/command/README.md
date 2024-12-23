@@ -32,6 +32,7 @@ The implementation includes:
 - Client (creates and configures concrete commands)
 
 ## Usage Example
+```typescript
 // Create receiver and commands
 const receiver = new Receiver();
 const command1 = new ConcreteCommand(receiver);
@@ -42,7 +43,8 @@ invoker.setCommand(command1);
 invoker.executeCommand();
 // Execute commands directly
 command2.execute();
-command2.undo(); 
+command2.undo();
+```
 
 ## Benefits
 - Decouples classes that invoke operations from classes that perform these operations

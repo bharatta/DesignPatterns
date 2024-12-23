@@ -31,7 +31,7 @@ The implementation includes:
 - Concrete Aggregate
 
 ## Usage Example 
-
+```typescript
 // Create collection
 const collection = new WordsCollection();
 collection.addItem("First");
@@ -47,6 +47,7 @@ const reverseIterator = collection.getReverseIterator();
 while (reverseIterator.valid()) {
 console.log(reverseIterator.next());
 }
+```
 
 ## Benefits
 - Supports variations in traversal of a collection
