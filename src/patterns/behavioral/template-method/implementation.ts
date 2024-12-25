@@ -13,15 +13,15 @@ export abstract class AbstractClass implements IAbstractClass {
   }
 
   protected baseOperation1(): void {
-    console.log('AbstractClass: I am doing the bulk of the work');
+    console.log('\t\tAbstractClass: I am doing the bulk of the work');
   }
 
   protected baseOperation2(): void {
-    console.log('AbstractClass: But I let subclasses override some operations');
+    console.log('\t\tAbstractClass: But I let subclasses override some operations');
   }
 
   protected baseOperation3(): void {
-    console.log('AbstractClass: But I am doing the bulk of the work anyway');
+    console.log('\t\tAbstractClass: But I am doing the bulk of the work anyway');
   }
 
   protected abstract requiredOperation1(): void;
@@ -34,24 +34,24 @@ export abstract class AbstractClass implements IAbstractClass {
 // Concrete Classes
 export class ConcreteClass1 extends AbstractClass {
   protected requiredOperation1(): void {
-    console.log('ConcreteClass1: Implemented Operation1');
+    console.log('\t\tConcreteClass1: Implemented Operation1');
   }
 
   protected requiredOperation2(): void {
-    console.log('ConcreteClass1: Implemented Operation2');
+    console.log('\t\tConcreteClass1: Implemented Operation2');
   }
 }
 
 export class ConcreteClass2 extends AbstractClass {
   protected requiredOperation1(): void {
-    console.log('ConcreteClass2: Implemented Operation1');
+    console.log('\t\tConcreteClass2: Implemented Operation1');
   }
 
   protected requiredOperation2(): void {
-    console.log('ConcreteClass2: Implemented Operation2');
+    console.log('\t\tConcreteClass2: Implemented Operation2');
   }
 
   protected hook1(): void {
-    console.log('ConcreteClass2: Overridden Hook1');
+    console.log('\t\tConcreteClass2: Overridden Hook1');
   }
 } 

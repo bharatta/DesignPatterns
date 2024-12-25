@@ -2,7 +2,7 @@ import { ISubject } from './interfaces';
 
 export class RealSubject implements ISubject {
   public request(): void {
-    console.log('RealSubject: Handling request.');
+    console.log('\t\tRealSubject: Handling request.');
   }
 }
 
@@ -21,12 +21,12 @@ export class Proxy implements ISubject {
   }
 
   private checkAccess(): boolean {
-    console.log('Proxy: Checking access prior to firing a real request.');
+    console.log('\t\tProxy: Checking access prior to firing a real request.');
     return true;
   }
 
   private logAccess(): void {
-    console.log('Proxy: Logging the time of request.');
+    console.log('\t\tProxy: Logging the time of request.');
   }
 }
 
@@ -38,7 +38,7 @@ export class VirtualProxy implements ISubject {
 
   public request(): void {
     if (this.realSubject === null) {
-      console.log('VirtualProxy: Creating RealSubject instance on first request.');
+      console.log('\t\tVirtualProxy: Creating RealSubject instance on first request.');
       this.realSubject = new RealSubject();
     }
     this.realSubject.request();
@@ -57,10 +57,10 @@ export class ProtectionProxy implements ISubject {
 
   public request(): void {
     if (this.isAdmin) {
-      console.log('ProtectionProxy: Access granted.');
+      console.log('\t\tProtectionProxy: Access granted.');
       this.realSubject.request();
     } else {
-      console.log('ProtectionProxy: Access denied.');
+      console.log('\t\tProtectionProxy: Access denied.');
     }
   }
 } 

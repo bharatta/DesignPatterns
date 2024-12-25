@@ -3,11 +3,11 @@ import { ICommand, IReceiver, IInvoker } from './interfaces';
 // Receiver
 export class Receiver implements IReceiver {
   public doSomething(a: string): void {
-    console.log(`Receiver: Working on (${a}.)`);
+    console.log(`\tReceiver: Working on (${a}.)`);
   }
 
   public doSomethingElse(b: string): void {
-    console.log(`Receiver: Also working on (${b}.)`);
+    console.log(`\tReceiver: Also working on (${b}.)`);
   }
 }
 
@@ -20,11 +20,11 @@ export class SimpleCommand implements ICommand {
   }
 
   public execute(): void {
-    console.log(`SimpleCommand: See, I can do simple things like printing (${this.payload})`);
+    console.log(`\tSimpleCommand: See, I can do simple things like printing (${this.payload})`);
   }
 
   public undo(): void {
-    console.log(`SimpleCommand: Undoing print of (${this.payload})`);
+    console.log(`\tSimpleCommand: Undoing print of (${this.payload})`);
   }
 }
 
@@ -40,14 +40,14 @@ export class ComplexCommand implements ICommand {
   }
 
   public execute(): void {
-    console.log('ComplexCommand: Complex stuff should be done by a receiver object.');
+    console.log('\tComplexCommand: Complex stuff should be done by a receiver object.');
     this.receiver.doSomething(this.a);
     this.receiver.doSomethingElse(this.b);
   }
 
   public undo(): void {
-    console.log('ComplexCommand: Undoing complex stuff.');
-    console.log(`Undoing: ${this.b}, ${this.a}`);
+    console.log('\tComplexCommand: Undoing complex stuff.');
+    console.log(`\tUndoing: ${this.b}, ${this.a}`);
   }
 }
 
@@ -65,14 +65,14 @@ export class Invoker implements IInvoker {
   }
 
   public doSomethingImportant(): void {
-    console.log('Invoker: Does anybody want something done before I begin?');
+    console.log('\tInvoker: Does anybody want something done before I begin?');
     if (this.onStart) {
       this.onStart.execute();
     }
 
-    console.log('Invoker: ...doing something really important...');
+    console.log('\tInvoker: ...doing something really important...');
 
-    console.log('Invoker: Does anybody want something done after I finish?');
+    console.log('\tInvoker: Does anybody want something done after I finish?');
     if (this.onFinish) {
       this.onFinish.execute();
     }

@@ -23,7 +23,7 @@ export class Abstraction implements IAbstraction {
 
   public operation(): string {
     const result = this.implementation.operationImplementation();
-    return `Abstraction: Base operation with:\n${result}`;
+    return `\tAbstraction: Base operation with:\n\t\t${result}`;
   }
 }
 
@@ -31,6 +31,6 @@ export class Abstraction implements IAbstraction {
 export class ExtendedAbstraction extends Abstraction {
   public operation(): string {
     const result = this.implementation.operationImplementation();
-    return `ExtendedAbstraction: Extended operation with:\n${result}`;
+    return `\tExtendedAbstraction: Extended operation with:\n\t\t${result}`;
   }
 } 

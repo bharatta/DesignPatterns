@@ -16,24 +16,24 @@ export class BaseComponent implements IComponent {
 // Concrete Components
 export class Component1 extends BaseComponent {
   public doA(): void {
-    console.log('Component 1 does A.');
+    console.log('\t\tComponent 1 does A.');
     this.mediator.notify(this, 'A');
   }
 
   public doB(): void {
-    console.log('Component 1 does B.');
+    console.log('\t\tComponent 1 does B.');
     this.mediator.notify(this, 'B');
   }
 }
 
 export class Component2 extends BaseComponent {
   public doC(): void {
-    console.log('Component 2 does C.');
+    console.log('\t\tComponent 2 does C.');
     this.mediator.notify(this, 'C');
   }
 
   public doD(): void {
-    console.log('Component 2 does D.');
+    console.log('\t\tComponent 2 does D.');
     this.mediator.notify(this, 'D');
   }
 }
@@ -52,12 +52,12 @@ export class ConcreteMediator implements IMediator {
 
   public notify(sender: object, event: string): void {
     if (event === 'A') {
-      console.log('Mediator reacts on A and triggers following operations:');
+      console.log('\tMediator reacts on A and triggers following operations:');
       this.component2.doC();
     }
 
     if (event === 'D') {
-      console.log('Mediator reacts on D and triggers following operations:');
+      console.log('\tMediator reacts on D and triggers following operations:');
       this.component1.doB();
       this.component2.doC();
     }

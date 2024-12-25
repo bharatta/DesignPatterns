@@ -1,58 +1,57 @@
-export * from './chain-of-responsibility/implementation';
-export * from './command/implementation';
-export * from './iterator/implementation';
-export * from './mediator/implementation';
-export * from './memento/implementation';
-export * from './observer/implementation';
-export * from './state/implementation';
-export * from './template-method/implementation';
-export * from './visitor/implementation';
-export * from './interpreter/implementation';
+import { runChainOfResponsibilityExample } from './chain-of-responsibility/chain-of-responsibility-food-chain';
+import { runCommandExample } from './command/command-text-editor';
+import { runIteratorExample } from './iterator/words-collection-iterator';
+import { runMediatorExample } from './mediator/mediator-chat-room';
+import { runMementoExample } from './memento/memento-editor-history';
+import { runObserverExample } from './observer/newsletter-observer';
+import { runStateExample } from './state/state-vending-machine';
+import { runStrategyExample } from './strategy/sort-strategy-example';
+import { runTemplateMethodExample } from './template-method/template-method-data-mining';
+import { runVisitorExample } from './visitor/visitor-document-export';
+import { runInterpreterExample } from './interpreter/language-interpreter';
 
 export const runBehavioralPatterns = async (): Promise<void> => {
-  console.log('\n=== Behavioral Patterns ===\n');
-
-  // Chain of Responsibility Example
-  console.log('--- Chain of Responsibility Pattern ---');
-  await import('./chain-of-responsibility/example').then(m => m.runChainOfResponsibilityExample());
+  
+  console.log('01) Chain of Responsibility Pattern');
+  await runChainOfResponsibilityExample();
 
   // Command Example
-  console.log('\n--- Command Pattern ---');
-  await import('./command/example').then(m => m.runCommandExample());
+  console.log('\n02) Command Pattern');
+  await runCommandExample();
 
   // Iterator Example
-  console.log('\n--- Iterator Pattern ---');
-  await import('./iterator/example').then(m => m.runIteratorExample());
+  console.log('\n03) Iterator Pattern');
+  await runIteratorExample();
 
   // Mediator Example
-  console.log('\n--- Mediator Pattern ---');
-  await import('./mediator/example').then(m => m.runMediatorExample());
+  console.log('\n04) Mediator Pattern');
+  await runMediatorExample();
 
   // Memento Example
-  console.log('\n--- Memento Pattern ---');
-  await import('./memento/example').then(m => m.runMementoExample());
+  console.log('\n05) Memento Pattern');
+  await runMementoExample();
 
   // Observer Example
-  console.log('\n--- Observer Pattern ---');
-  await import('./observer/example').then(m => m.runObserverExample());
+  console.log('\n06) Observer Pattern');
+  await runObserverExample();
 
   // State Example
-  console.log('\n--- State Pattern ---');
-  await import('./state/example').then(m => m.runStateExample());
+  console.log('\n07) State Pattern');
+  await runStateExample();
 
   // Strategy Example
-  console.log('\n--- Strategy Pattern ---');
-  await import('./strategy/example').then(m => m.runStrategyExample());
+  console.log('\n08) Strategy Pattern');
+  await runStrategyExample();
 
   // Template Method Example
-  console.log('\n--- Template Method Pattern ---');
-  await import('./template-method/example').then(m => m.runTemplateMethodExample());
+  console.log('\n09) Template Method Pattern');
+  await runTemplateMethodExample();
 
   // Visitor Example
-  console.log('\n--- Visitor Pattern ---');
-  await import('./visitor/example').then(m => m.runVisitorExample());
+  console.log('\n10) Visitor Pattern');
+  await runVisitorExample();
 
   // Interpreter Example
-  console.log('\n--- Interpreter Pattern ---');
-  await import('./interpreter/example').then(m => m.runInterpreterExample());
+  console.log('\n11) Interpreter Pattern');
+  await runInterpreterExample();
 }; 

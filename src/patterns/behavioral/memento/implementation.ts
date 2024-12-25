@@ -29,13 +29,13 @@ export class Originator implements IOriginator {
 
   constructor(state: string) {
     this.state = state;
-    console.log(`Originator: My initial state is: ${state}`);
+    console.log(`\tOriginator: My initial state is: ${state}`);
   }
 
   public doSomething(): void {
-    console.log('Originator: I\'m doing something important.');
+    console.log('\t\tOriginator: I\'m doing something important.');
     this.state = this.generateRandomString(30);
-    console.log(`Originator: and my state has changed to: ${this.state}`);
+    console.log(`\t\tOriginator: and my state has changed to: ${this.state}`);
   }
 
   private generateRandomString(length: number = 10): string {
@@ -49,7 +49,7 @@ export class Originator implements IOriginator {
 
   public restore(memento: IMemento): void {
     this.state = memento.getState();
-    console.log(`Originator: My state has been changed to: ${this.state}`);
+    console.log(`\t\tOriginator: My state has been changed to: ${this.state}`);
   }
 }
 
@@ -63,7 +63,7 @@ export class Caretaker implements ICaretaker {
   }
 
   public backup(): void {
-    console.log('\nCaretaker: Saving Originator\'s state...');
+    console.log('\n\tCaretaker: Saving Originator\'s state...');
     this.mementos.push(this.originator.save());
   }
 
@@ -72,14 +72,14 @@ export class Caretaker implements ICaretaker {
       return;
     }
     const memento = this.mementos.pop();
-    console.log(`Caretaker: Restoring state to: ${memento!.getName()}`);
+    console.log(`\t\tCaretaker: Restoring state to: ${memento!.getName()}`);
     this.originator.restore(memento!);
   }
 
   public showHistory(): void {
-    console.log('Caretaker: Here\'s the list of mementos:');
+    console.log('\t\tCaretaker: Here\'s the list of mementos:');
     for (const memento of this.mementos) {
-      console.log(memento.getName());
+      console.log('\t\t\t', memento.getName());
     }
   }
 } 

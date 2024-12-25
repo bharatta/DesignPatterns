@@ -1,64 +1,113 @@
-# Facade Pattern
+# Video Conversion System - Facade Pattern Example
 
-## Purpose
-The Facade pattern provides a simplified interface to a complex subsystem. It defines a higher-level interface that makes the subsystem easier to use.
+## Overview
+This example demonstrates the Facade pattern by implementing a video conversion system that simplifies complex video processing operations into a single interface.
 
-## When to Use
-- When you need to provide a simple interface to a complex subsystem
-- When you want to layer your subsystems
-- When you want to decouple your subsystem from clients and other subsystems
-- When you need to have a control point to a subsystem
-
-## Real-World Examples
-1. Computer Startup
-   - Power up CPU
-   - Check memory
-   - Load OS
-   - Initialize drivers
-   All wrapped in a simple "start" button
-
-2. Online Shopping
-   - Check inventory
-   - Process payment
-   - Update order status
-   - Send notifications
-   All wrapped in a simple "checkout" process
-
-3. Video Conversion
-   - Load file
-   - Apply codec
-   - Process audio
-   - Save output
-   All wrapped in a simple "convert" method
-
-## Implementation Details
-The implementation includes:
-- Facade class that wraps complex subsystems
-- Subsystem classes
-- Optional interfaces for subsystems
-
-## Usage Example 
-```typescript
-// Complex subsystem parts
-const subsystem1 = new Subsystem1();
-const subsystem2 = new Subsystem2();
-// Simple facade interface
-const facade = new Facade(subsystem1, subsystem2);
-facade.operation();
+## Structure
+```
+video-conversion/
+├── interfaces/        # Contracts for all components
+├── models/           # Data models
+├── codecs/           # Video codec implementations
+├── services/         # Core services
+├── facades/          # Main facade
+└── __tests__/        # Test files
 ```
 
+## Components
+
+### Interfaces
+- `IVideoFile`: Video file properties
+- `ICodec`: Video codec operations
+- `IAudioExtractor`: Audio extraction operations
+- `IVideoCompressor`: Video compression operations
+- `IBitrateReader`: Bitrate reading operations
+- `IVideoConverter`: Main conversion operations
+
+### Models
+- `VideoFile`: Implements video file properties
+
+### Codecs
+- `MPEG4Codec`: Handles MP4 format
+- `OGGCodec`: Handles OGG format
+
+### Services
+- `AudioExtractor`: Extracts audio from video
+- `VideoCompressor`: Compresses video data
+- `BitrateReader`: Reads video bitrate
+
+### Facade
+- `VideoConversionFacade`: Simplifies video conversion process
+
+## Usage Example
+```typescript
+// Initialize components
+const audioExtractor = new AudioExtractor();
+const videoCompressor = new VideoCompressor();
+const bitrateReader = new BitrateReader();
+
+// Create facade
+const converter = new VideoConversionFacade(
+  audioExtractor,
+  videoCompressor,
+  bitrateReader
+);
+
+// Convert video
+const result = converter.convert('video.mp4', 'ogg');
+```
+
+## SOLID Principles Applied
+
+### Single Responsibility Principle
+- Each class has one specific responsibility
+- Services are separated into distinct classes
+
+### Open/Closed Principle
+- New codecs can be added without modifying existing code
+- New services can be added by implementing interfaces
+
+### Liskov Substitution Principle
+- All codec implementations are interchangeable
+- All service implementations can be substituted
+
+### Interface Segregation Principle
+- Interfaces are specific to each component's needs
+- No component is forced to implement unnecessary methods
+
+### Dependency Inversion Principle
+- High-level modules depend on abstractions
+- Dependencies are injected through constructor
+
+## Testing
+```bash
+# Run all tests
+npm test -- video-conversion
+
+# Run specific test
+npm test -- video-converter.test.ts
+```
+
+## Adding New Features
+
+### Adding New Codec
+1. Create new codec class in `codecs/`
+2. Implement `ICodec` interface
+3. Add codec to `VideoConversionFacade`
+
+### Adding New Service
+1. Define interface in `interfaces/`
+2. Implement service in `services/`
+3. Inject into facade if needed
+
 ## Benefits
-- Isolates clients from subsystem components
-- Promotes weak coupling
-- Reduces compilation dependencies
-- Allows for subsystem changes without affecting clients
+- Simplified client interface
+- Decoupled subsystems
+- Easy to extend
+- Maintainable code structure
+- Clear separation of concerns
 
-## Drawbacks
-- Can become a god object coupled to all classes
-- May introduce unnecessary abstraction
-- May hide useful complexity that clients need to be aware of
-
-## Related Patterns
-- Abstract Factory: Can be used with Facade to create subsystem objects
-- Mediator: Similar but with different intent
-- Singleton: Facade objects are often singletons
+## Limitations
+- May hide useful complexity
+- Additional layer of abstraction
+- Potential performance overhead 

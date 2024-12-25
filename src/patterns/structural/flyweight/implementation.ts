@@ -11,7 +11,7 @@ export class Flyweight implements IFlyweight {
   public operation(uniqueState: string): void {
     const s = JSON.stringify(this.sharedState);
     const u = JSON.stringify(uniqueState);
-    console.log(`Flyweight: Displaying shared (${s}) and unique (${u}) state.`);
+    console.log(`\tFlyweight: Displaying shared (${s}) and unique (${u}) state.`);
   }
 }
 
@@ -33,10 +33,10 @@ export class FlyweightFactory implements IFlyweightFactory {
     const key = this.getKey(sharedState);
 
     if (!(key in this.flyweights)) {
-      console.log('FlyweightFactory: Can\'t find a flyweight, creating new one.');
+      console.log('\tFlyweightFactory: Can\'t find a flyweight, creating new one.');
       this.flyweights[key] = new Flyweight(sharedState);
     } else {
-      console.log('FlyweightFactory: Reusing existing flyweight.');
+      console.log('\tFlyweightFactory: Reusing existing flyweight.');
     }
 
     return this.flyweights[key];
@@ -44,7 +44,7 @@ export class FlyweightFactory implements IFlyweightFactory {
 
   public listFlyweights(): void {
     const count = Object.keys(this.flyweights).length;
-    console.log(`\nFlyweightFactory: I have ${count} flyweights:`);
+    console.log(`\n\tFlyweightFactory: I have ${count} flyweights:`);
     for (const key in this.flyweights) {
       console.log(key);
     }

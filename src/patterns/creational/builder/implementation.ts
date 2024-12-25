@@ -4,7 +4,7 @@ export class Product implements IProduct {
   public parts: string[] = [];
 
   public listParts(): void {
-    console.log(`Product parts: ${this.parts.join(', ')}`);
+    console.log(`\t\tProduct parts: ${this.parts.join(', ')}`);
   }
 }
 
